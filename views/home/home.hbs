@@ -1,0 +1,117 @@
+{{!-- <html lang="en">
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interview Experience</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="mb-4">Interview Articles</h1>
+    <a href="/articles/new" class="btn btn-success">New article</a>
+
+    {{#each articles}}
+    <div class="card mt-4">
+      <div class="card-body">
+        <h4 class="card-title">{{this.title}}</h4>
+        <div class="card-subtitle text-muted mb-2">
+          {{this.createdAt.toLocaleDateString('EU'))}};
+          {{this.createdAt}}
+        </div>
+        <div class="card-text mb-2">
+          {{this.description}}
+        </div>
+        <a href="/articles/{{this.slug}}" class="btn btn-primary">Read more</a>
+
+      </div>
+    </div>
+    {{/each}}
+
+    <br />
+
+    <div class="card mt-4">
+      {{#each company}}
+      <div class="card-body">
+        <h4 class="card-title">{{this.title}}</h4>
+        <div class="card-subtitle text-muted mb-2">
+          {{this.count}}
+        </div>
+        <a href="/interview/{{this.title}}" class="btn btn-primary">Read more</a>
+      </div>
+      {{/each}}
+    </div>
+
+  </div>
+</body>
+
+</html> --}}
+
+
+<html lang="en">
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/home/home.css">
+  <title>Interview Experience</title>
+</head>
+
+<body>
+  <nav>
+    <a href="/"><h3 style="font-weight: 700;color:rgb(64, 62, 62)">Interview Insights</h3></a>
+    <div class="navButton">
+      <a href="/articles/new" class="btn btn-success">Write article</a>
+      <a href="/articles/request" class="btn btn-success">Request article</a>
+    </div>
+  </nav>
+  <div class="completeContainer">
+
+    
+    <div class="companies">
+      <h4>Company List</h4>
+      {{#each company}}
+      <a href="/interview/{{this.title}}">
+      <div class="company">
+        
+        <h4 class="card-title">{{this.title}}</h4>
+        <div class="count">
+          {{this.count}}
+        </div>
+      
+      </div>
+        </a>
+      {{/each}}
+    </div>
+    <div class="lottie">
+      <iframe class="lottieImage" src="https://embed.lottiefiles.com/animation/76035"></iframe>
+      <p>Interview Insights: Experience Sharing platform developed for WCE to read & share encounters of various
+        interviews</p>
+    </div>
+    <div class="articles">
+      <h4>All Articles</h4>
+      {{#each articles}}
+      <div class="article">
+        <div class="card-body">
+          <h4 class="card-title">{{this.title}}</h4>
+          <div class="card-subtitle text-muted mb-2">
+            {{this.createdAt}}
+          </div>
+          <div class="card-text mb-2">
+            {{this.description}}
+          </div>
+          <a href="/articles/{{this.slug}}" class="btn btn-primary">Read more</a>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</body>
+
+</html>
