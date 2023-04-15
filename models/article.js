@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const marked = require('marked');
 const slugify = require('slugify');
+const { application } = require('express');
 
 const articleSchema = new mongoose.Schema({
     title:{
