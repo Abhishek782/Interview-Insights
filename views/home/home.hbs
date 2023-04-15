@@ -60,15 +60,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/css/home/home.css">
+  <script src="https://kit.fontawesome.com/57d7b546f7.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
   <title>Interview Experience</title>
 </head>
 
 <body>
   <nav>
-    <a href="/"><h3 style="font-weight: 700;color:rgb(64, 62, 62)">Interview Insights</h3></a>
+    <div class="header">
+      <h1><i class="fa-brands fa-aws"></i></h1>
+    <a href="/" class="webName"><h2 style="font-weight:900">Interview Insights</h2></a>
+    </div>
     <div class="navButton">
-      <a href="/articles/new" class="btn btn-success">Write article</a>
-      <a href="/articles/request" class="btn btn-success">Request article</a>
+      <a href="/articles/new" class="articleButtons">Write article</a>
+      <a href="/articles/request" class="articleButtons" >Request article</a>
     </div>
   </nav>
   <div class="completeContainer">
@@ -106,7 +113,7 @@
           <div class="card-text mb-2">
             {{this.description}}
           </div>
-          <a href="/articles/{{this.slug}}" class="btn btn-primary">Read more</a>
+          <a href="/articles/{{this.slug}}" class="articleButtons">Read more</a>
         </div>
       </div>
       {{/each}}

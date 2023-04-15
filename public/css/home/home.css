@@ -1,29 +1,46 @@
+*{
+    font-family: 'poppins';
+}
 nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #23a795;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-block: 10px;
+    padding-inline: 5%;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 .navButton{
     display: flex;
     gap: 20px;
 }
-.navButton a{
-    box-shadow: 0px 5px 10px 0px rgba(28, 75, 128, 0.5);
-    border: 1px solid black
+.webName{
+    text-decoration: none;
+    color: rgb(57, 55, 55);
+}
+.articleButtons{
+    box-shadow: 0px 2px 7px 0px rgba(28, 75, 128, 0.5); 
+    background-color: #64bcf4;
+    padding: 7px 20px;
+    /* border: 1px solid black; */
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
 }
 .completeContainer{
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
-    background-color: #68DBCC;
+    margin-inline: 3vw;
+    /* background-color: #68DBCC; */
     justify-content: space-between;
 }
 .companies{
-    height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -31,6 +48,7 @@ nav{
     overflow-y: auto;
     min-width: 300px;
     width: 20%;
+    gap: 10px;
     padding: 10px;
 }
 .company{
@@ -75,9 +93,33 @@ nav{
     padding: 10px;
 }
 .article{
+    min-width: 400px;
     border: 2px solid black;
     padding: 10px;
     border-radius: 10px;
     background-color: white;
     box-shadow: 0px 5px 10px 0px rgba(28, 75, 128, 0.5);
+}
+@media screen and (max-width: 1000px) {
+    .lottie{
+        display: none;
+    }
+    .completeContainer{
+        justify-content: space-between;
+    }
+}
+@media screen and (max-width: 750px) {
+    .lottie{
+        display: none;
+    }
+    .completeContainer{
+        flex-direction: column;
+        align-items: center;
+        justify-content:center;
+    }
+    nav{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }

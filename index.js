@@ -17,12 +17,17 @@ const path = require('path');
 
 const { checkUser } = require('./middleware/authMiddleware');
 const uploadRouter = require('./routes/uploads')
-mongoose.connect(process.env.DB_URL,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
- 
-})
-
+try{
+    mongoose.connect(process.env.DB_URL,{
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+     
+    })
+}
+catch(e){
+    console.log(e);
+}
+console.log("Connected to mongodb successfully");
 
 app.set('view engine','hbs');
 hbs.registerPartials(__dirname + '/views/partials/');
