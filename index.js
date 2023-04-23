@@ -1,10 +1,10 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const app = express();
+const dotenv = require('dotenv').config();
 const PORT = 5000 || process.env.PORT;
 const hbs = require('hbs');
 const Article = require('./models/article')
-const mongoose = require('mongoose');
-const dotenv = require('dotenv').config();
 const methodOverride = require('method-override');
 const articleRouter  = require('./routes/articles');
 const requestRouter = require('./routes/request');
