@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
 
 
 router.post('/', async (req, res) => {
-console.log(req.body.name);
     let data = await User.find({}, { email: 1, _id: 0 });
     var admin_emails = data.map(function (obj) {
         return obj.email;
