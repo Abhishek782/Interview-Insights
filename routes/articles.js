@@ -3,13 +3,13 @@ const express = require('express');
 const router = express.Router();
 const Article = require('../models/article')
 const Company = require('../models/company')
-
+const check = require('../middleware/authMiddleware')
 router.get('/new', (req, res) => {
     res.render('articles/new', { article: new Article() });
 })
 
 
-router.get('/edit/:id', async (req, res) => {
+router.get('/edit/:id',check.requireAuth, async (req, res) => {
     const article = await Article.findById(req.params.id);
     res.render('articles/edit', { article: article });
 })

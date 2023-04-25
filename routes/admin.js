@@ -19,7 +19,7 @@ router.get('/edit/:id',check.requireAuth,async(req,res)=>{
     res.render('articles/edit',{article: article});
 })
 
-router.get('/:slug',async (req,res)=>{
+router.get('/:slug',check.requireAuth,async (req,res)=>{
     const article = await  Article.findOne({ slug:req.params.slug })
     if(article == null)
     {
