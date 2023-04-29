@@ -1,96 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Request Page</title>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Request an article</title>
+    <meta name="viewport" content="width=device-width,
+      initial-scale=1.0"/>
     <link rel="stylesheet" href="/css/request/style.css" />
-</head>
-
-<body>
-    <div class="container" id="container">
-        <div class="displayStep" id="displayStep">
-            <div class="circle">
-                <div class="circle1" id="circle1">
-                    <p>1</p>
-                </div>
-                <div class="circle2" id="circle2">
-                    <p>2</p>
-                </div>
-
-            </div>
-            <div class="steps">
-                <div class="step1">
-                    <p>STEP 1</p>
-                    <span>YOUR INFO</span>
-                </div>
-                <div class="step1">
-                    <p>STEP 2</p>
-                    <span>Company Info</span>
-                </div>
-
-            </div>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="form-title">Request an Article</h1>
+      <form action="#">
+        <div class="main-user-info">
+          <div class="user-input-box">
+            <label for="fullName">Your Name</label>
+            <input type="text"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="Enter Full Name"/>
+          </div>
+          <div class="user-input-box">
+            <label for="email">Email</label>
+            <input type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter Email"/>
+          </div>
+          <div class="user-input-box">
+            <label for="senior">Senior Name</label>
+            <input type="text"
+                    id="senior"
+                    name="senior"
+                    placeholder="Enter Senior Name"/>
+          </div>
+          <div class="user-input-box">
+            <label for="senior">Senior Social Link</label>
+            <input type="text"
+                    id="senior"
+                    name="senior"
+                    placeholder="Enter Senior's social profile link"/>
+          </div>
+          <div class="user-input-box">
+            <label for="company">Company Name</label>
+            <input type="text"
+                    id="company"
+                    name="company"
+                    placeholder="Enter Company Name"/>
+          </div>
+          <div class="user-input-box">
+            <label for="personalnote">Personal Note</label>
+            <input type="text"
+                    id="personalnote"
+                    name="personalnote"
+                    placeholder="Enter the points to be covered"/>
+          </div>
         </div>
-        <div class="stepContainer" id="stepContainer">
-            <!--PERSO INFOS -------------------------------------------------------------------->
-            <div class="affichStep">
-                <form action="/request" method="post">
-                    <div class="stepInfo" id="stepInfo">
-                        <h1>Personal Info</h1>
-                        <p class="descrition">
-                            Please provide vour name, email address, and phone number.
-                        </p>
-                        <div class="flexError">
-                            <p>Name</p>
-                            <span id="errorName"></span>
-                        </div>
-                        <input type="text" name="name" id="infoName" placeholder="e.g. ABC" />
-                        <div class="flexError">
-                            <p>Email Address</p>
-                            <span id="errorMail"></span>
-                        </div>
-                        <input type="text" name="email" id="infoMail" placeholder="e.g. abc@gmail.com" />
-                        <div class="flexError">
-                            <p>PhoneNumber</p>
-                            <span id="errorNum"></span>
-                        </div>
-                        <input type="text" name="phone" id="infoNumber" placeholder="e.g. 9766744517" />
-                        <div class="buttonContainerStepOne">
-                            <button onclick="goStepTwo()" class="nextStep">Continue</button>
-                        </div>
-                    </div>
-                    <!--SELECT PLAN ------------------------------------------------------------------------>
-                    <div class="stepPlan" id="stepPlan">
-                        <h1>Company Details</h1>
-                        <p class="descrition">
-                            Enter Company details.
-                            <input type="text" name="company" placeholder="Company Name" required>
-                            <input type="text" name="senior" placeholder="Enter Seniour Social media link">
-                            <textarea name="Descrition" placeholder="Information to be covered" required></textarea>
-
-                        <div class="buttonContainerStepTwo">
-                            <button onclick="backStepOne()" class="goBack">Go back</button>
-                            <button type="submit" class="nextStep">
-                                Confirm
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                <!--THANK YOU------------------------------------------------------------------------------>
-                {{!-- <div class="stepThankYou" id="stepThankYou">
-                    <img src="/images/icon-thank-you.png" alt="" />
-                    <h1>Thank you!</h1>
-                    <p>
-                        Your request has been submitted.
-                    </p>
-                </div> --}}
-            </div>
+        <div class="form-submit-btn">
+          <button type="submit">Done</button>
         </div>
+      </form>
     </div>
-
-    <script src="/javascripts/request/script.js"></script>
-</body>
-
+  </body>
 </html>

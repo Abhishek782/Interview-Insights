@@ -1,36 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Interview Insights</title>
-        <link rel="stylesheet" href="/css/welcome/home-page.css">
-    </head>
-    <body>
-        <section>
-            <div class="circle"></div>
-           <header>
-         <a href="#" class="logo"><img src="/images/walchand_logo.png" style="height:10"></a>
-         <div class="toggle" onclick="toggleMenu();"></div>
-         <ul class="navigation">
-         <ul>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/user/login">Log In</a></li>
-            <li><a href="/user/signup">Sign Up</a></li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page With Light/Dark Mode</title>
+    <link rel="stylesheet" href="/css/welcome/home-page.css" />
+  </head>
+  <body>
+    <main>
+      <div class="big-wrapper light">
+        <img src="/images/welcome/shape.png" alt="" class="shape" />
 
-        </ul> 
-           </header>
-           <div class="content">
-           <div class="textBox">
-            <h2>Walchand College Of Engineering Sangli<br> <span>Interview Insights</span></h2>
-            <p>Walchand College of Engineering (WCE) was established in 1947 and is located in Vishrambag,
-                 Sangli, Maharashtra. This college started with an undergraduate course in Civil Engineering 
-                 and a capacity of 60 students.</p>
-                  <a href="http://www.walchandsangli.ac.in/">Learn More</a>
-                </div>
-                </div>   
-        </section>
-        
-   
-    </body>
+        <header>
+          <div class="container">
+            <div class="logo">
+              <img src="/images/welcome/menu.png" alt="Logo" />
+              <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Interview-Insights</h3>
+            </div>
+
+            <div class="links">
+              <ul>
+                <li style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><a href="/home" class="btn">Home</a></li>
+                <li style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><a href="/user/login" class="btn">Login</a></li>
+              </ul>
+            </div>
+
+            <div class="overlay"></div>
+
+            <div class="hamburger-menu">
+              <div class="bar"></div>
+            </div>
+          </div>
+        </header>
+
+        <div class="showcase-area">
+          <div class="container">
+            <div class="left">
+              <div class="big-title">
+                <h1>Learn from the best,</h1>
+                <h1>Get hired.</h1>
+              </div>
+              <p class="text">
+                Welcome to our interview experience website,
+                 where you can find real-world stories and expert advice to help you succeed in your job interviews.
+                 Discover insights from successful candidates and take your interview game to the next level.
+              </p>
+              <div class="cta">
+                <a href="#" class="bn">Get started</a>
+              </div>
+            </div>
+
+            <div class="right">
+          
+             <!-- <div class="lottie">
+              <iframe src="https://lottie.host/?file=4fb0a751-a2a9-4249-bb89-3e680ecf0c8d/A09cGSaTUp.json"></iframe>
+             </div> -->
+             <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> 
+
+
+    <lottie-player src="https://lottie.host/4fb0a751-a2a9-4249-bb89-3e680ecf0c8d/A09cGSaTUp.json" background="transparent" speed="1" style="width: 600px; height: 600px;" loop autoplay></lottie-player>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-area">
+          <div class="container">
+            <button class="toggle-btn">
+              <i class="far fa-moon"></i>
+              <i class="far fa-sun"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- JavaScript Files -->
+
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script src="/javascripts/welcome/app.js"></script>
+  </body>
 </html>

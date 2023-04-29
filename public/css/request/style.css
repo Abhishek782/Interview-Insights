@@ -1,131 +1,121 @@
-body {  font-family: "Ubuntu", sans-serif;
-    margin: 0;  background-image: url("/public/images/request/background.jpg");}
-  
-  button {  font-family: "Ubuntu", sans-serif;}
-  
-  .container {  display: flex;  background-color: rgb(129, 223, 211);
-    margin-top: 3%;  margin-left: auto;  margin-right: auto;
-    border-radius: 10px;
-      box-shadow: 20px 20px 20px rgba(47, 18, 18, 0.101);
-    width: 1000px;  height: 568px;
-  }
-  
-  .displayStep {  display: flex;  justify-content: center;
-    width: 274px;  height: 568px;
-    background-color: rgba(30, 16, 186, 0);
-    background-image: url("/public/images/request/bg-sidebar-desktop.png");
-  }
-  
-  .circle {  position: relative;
-    background-color: rgba(220, 20, 60, 0);
-    width: 20%;  color: white;  font-weight: 500;  height: 50%;
-    margin-top: 15%;  display: flex;  flex-direction: column;
-    justify-content: space-between;  align-items: center;
-  }
-  .circle p {  margin-top: 10px;}
-  .circle1 {  width: 40px;  height: 40px;
-    border-radius: 20px;
-    background-color: rgb(255, 255, 255);
-    border: solid 1px white;  display: flex;
-    justify-content: center;  color: black;
-  }
-  .circle2 {  width: 40px;  height: 40px;
-    border-radius: 20px;  background-color: rgba(0, 0, 0, 0);
-    border: solid 1px white;  display: flex;
-    justify-content: center;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(233, 228, 228);
+  background-size: cover;
+}
+
+.container{
+  width: 100%;
+  max-width: 650px;
+  height: 60%;
+  max-height: 500px;
+  background: white; 
+  border: 4px solid black;
+  padding: 28px;
+  margin: 0 28px;
+  border-radius: 20px;
+  box-shadow: inset -2px 2px 2px white;
+}
+
+.form-title{
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 6px;
+  color: black;
+  height: 40px;
+  border-bottom: solid 1px black;
+}
+
+.main-user-info{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.user-input-box:nth-child(2n){
+  justify-content: end;
+}
+
+.user-input-box{
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  padding-bottom: 15px;
+}
+
+.user-input-box label{
+  width: 95%;
+  color: black;
+  font-size: 16px;
+  font-weight: 550;
+  margin: 5px 0;
+}
+/* #personalnote{
+  width: 95%;
+  border-radius: 6px;
+  padding: 4%;
+  height: 100%;
+} */
+
+.user-input-box input{
+  height: 40px;
+  width: 95%;
+  border-radius: 7px;
+  outline: none;
+  border: 1px solid grey;
+  padding: 0 10px;
+}
+.form-submit-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-submit-btn button{
+  display: block;
+  width: 40%;
+  margin-top: 10px;
+  font-size: 20px;
+  padding: 10px;
+  border:none;
+  border-radius: 6px;
+  color: black;
+  background: #64bcf4;
+  cursor: pointer;
+  margin-block: auto;
+}
+
+@media(max-width: 400px){
+  .container{
+      min-width: 280px;
   }
 
-  
-  .steps {  position: relative;
-    background-color: rgba(255, 255, 0, 0);
-    display: flex;  flex-direction: column;
-    justify-content: space-between;  width: 60%;
-    height: 50%;  margin-top: 15%;
-    margin-left: 0%;
-  }
-  
-  .step1 {  position: inherit;  padding-left: 5px;
-    background-color: rgba(156, 55, 55, 0);
-  }
-  
-  .steps p {  margin-bottom: 0px;
-    margin-top: 0px;  font-size: 14px;
-    color: hsl(231, 11%, 88%);
-  }
-  
-  .steps span {  color: white;
-  }
-  .stepContainer {
-    background-color: rgba(210, 96, 14, 0);
-    width: 50%;  height: 550px;
-    margin-top: auto;  margin-left: auto;
-    margin-right: auto;  margin-bottom: auto;
-  }
-  
-  #stepInfo {  display: flex;  flex-direction: column;}
-  
-  #stepPlan {  display: none;  flex-direction: column;}
-   
-  #stepThankYou {  display:none;  flex-direction: column;
-    height:80vh;
-    justify-content: center;
-    align-items: center;}
-    .img{
-      align-items: center;
-    }
-  
-  #stepThankYou img {  width: 80px;}
-  
-  #stepInfo input {  width: 100%;  height: 40px;
-    border-radius: 5px;
-    border: solid 1px rgba(103, 92, 92, 0.628);
-  }
-  .buttonContainerStepOne {  position: relative;
-    background-color: rgba(0, 255, 51, 0);
-    padding-left: 380px;  padding-top: 73px;}
-  
-  .buttonContainerStepTwo {  display: flex;
-    justify-content: space-between;
-    background-color: rgba(0, 255, 51, 0);  padding-top: 75px;
+  .user-input-box{
+      margin-bottom: 12px;
+      width: 100%;
   }
 
-  
-  .nextStep {  padding: 15px 20px 15px 20px;
-    width: 120px;  background-color: hsl(213, 96%, 18%);
-    color: white;  border-radius: 5px;
-    border: solid 1px rgba(0, 0, 255, 0);
-    cursor: pointer;  font-size: 16px;
+  .user-input-box:nth-child(2n){
+      justify-content: space-between;
   }
-  .nextStep:hover {  background-color: hsla(243, 100%, 62%, 0.423);}
-    
-  .goBack {  padding: 15px 20px 15px 20px;
-    width: 120px;  background-color: hsl(213, 96%, 18%);
-    color: white;  border-radius: 5px;
-    border: solid 1px rgba(0, 0, 255, 0);
-    cursor: pointer;  font-size: 16px;;}
-  .goBack:hover {  background-color: hsla(243, 100%, 62%, 0.423);}
-  
-  .dollar {  margin-left: -239px;}
-  .underMedia {  flex-direction: column;}
-  #errorName {  color: red;  font-size: 12px;}
-  #errorNum {  color: red;  font-size: 12px;}
-  #errorMail {  color: red;  font-size: 12px;}
-  .flexError {  display: flex;  text-align: center;
-    justify-content: space-between;
+  .main-user-info{
+      max-height: 380px;
+      overflow:auto;
   }
-  
-  .flexError span {  padding-top: 19px;}
 
-  .stepPlan form{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  .main-user-info::-webkit-scrollbar{
+      width: 0;
   }
-  .stepPlan form input,textarea{
-    border-radius: 5px;
-    padding: 10px 5px;
-    background-color: rgb(223, 233, 242);
-  }
-  .stepPlan form textarea{
-    height: 20vh;
-  }
+}

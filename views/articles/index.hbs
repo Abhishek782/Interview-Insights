@@ -18,17 +18,17 @@
                     <h4 class="card-title">{{this.title}}</h4>
                     <div class="card-subtitle text-muted mb-2">
                         {{!-- {{this.createdAt.toLocaleDateString('EU'))}}; --}}
-                        {{this.createdAt}}
+                        {{this.currentDate}}
                     </div>
                     <div class="card-text mb-2">
                         {{this.description}}
                     </div>
                     <a href="/articles/{{this.slug}}" class="btn btn-primary">Read more</a>
-                    <a href="/articles/edit/{{this.id}}" class="btn btn-info">Edit</a>
+                    <a href="/admin/edit/{{this.id}}" class="btn btn-info">Edit</a>
                     <form action="/uploads/{{this.id}}" method="POST" class="d-inline">
                         <button type="submit" class="btn btn-danger">Upload</button>
                     </form>
-                    <form action="/articles/{{this.id}}?_method=DELETE" method="POST" class="d-inline">
+                    <form action="/admin/{{this.id}}?_method=DELETE" method="POST" class="d-inline">
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                 </div>

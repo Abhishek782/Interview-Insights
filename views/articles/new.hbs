@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,29 +8,111 @@
     <title>Write your Experience</title>
     <link rel="stylesheet" href="/css/article/utils.css">
     <link rel="stylesheet" href="/css/article/style.css">
+    {{!--
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script> --}}
+    <script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
+
+
 </head>
+
 <body>
     <div class="container">
         <div class="upper-container">
-        <div class="div-left">
-            <div class="logoAndNav">
-                <a href="">
-                    <span><img src="/images/article_logo.png" width="50px" alt=""></span>
-                </a>
-                <ul>
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="">About</a></li>
-                </ul>
+            <div class="div-left">
+                <div class="logoAndNav">
+                    <a href="">
+                        <span><img src="/images/article_logo.png" width="50px" alt=""></span>
+                    </a>
+                    <ul>
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="">About</a></li>
+                    </ul>
+                </div>
+                <form action="" method="get">
+                    <input class="form-input" type="text" name="query" placeholder="Search for Companies">
+                    <button class="btn">Search</button>
+                </form>
             </div>
-            <form action="" method="get">
-                <input class="form-input" type="text" name="query" placeholder="Search for Companies">
-                <button class="btn">Search</button>
-            </form>
         </div>
-    </div>
         <form action="/articles" method="POST">
-            {{>_form_fields}}
+            {{!-- {{>_form_fields}} --}}
+            <div class="contact-content font1 max-width-1 m-auto">
+                <div class="max-width-1 m-auto mx-1">
+                    <h2>Write Your Interview Experience</h2>
+                    <div class="contact-form">
+                        <div class="form-box">
+                            <input type="text" name="title" placeholder="Enter Title" value={{article.title}}>
+                        </div>
+                        <div class="form-box">
+                            <input type="text" name="name" placeholder="Enter Your Name" value={{article.name}}>
+                        </div>
+                        <div class="form-box">
+                            <input type="text" name="company" placeholder="Mention the Company Name"
+                                value={{article.company}}>
+                        </div>
+                        <div class="form-box">
+                            <input type="email" name="email" placeholder="Enter Your Email" value={{article.email}}>
+                        </div>
+                        <div class="form-box">
+                            <textarea name="description" id="description" >{{article.description}}</textarea>
+
+
+                        </div>
+
+                        <div class="form-box1">
+                            <button type="submit" class="btn" id="submit">Submit</button>
+                            <button type="submit" class="btn">Cancel</button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
         </form>
     </div>
+    <script>
+        const submitBtn = document.querySelector("#submit");
+        ClassicEditor
+            .create(document.querySelector('#description'), {
+                toolbar: {
+                    items: [
+                        'undo', 'redo',
+                        '|', 'heading',
+                        '|', 'bold', 'italic', 'strikethrough', 'subscript', 'superscript', 'code',
+                        '|', 'link', 'blockQuote', 'codeBlock',
+                        '|', 'alignment',
+                        '|', 'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent'
+                    ],
+                    shouldNotGroupWhenFull: true
+                }
+
+
+            })
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+        submitBtn.addEventListener('click', () => {
+
+            const editorContent = editor.getData();
+
+            const sanitizedContent = sanitizeHtml(editorContent, {
+                allowedTags: [],
+                allowedAttributes: {}
+            });
+
+            document.querySelector('#description').value = sanitizedContent;
+        });
+
+
+
+    </script>
+
 </body>
+
 </html>

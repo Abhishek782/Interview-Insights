@@ -16,8 +16,8 @@ const articleSchema = new mongoose.Schema({
         type:String,
         // required:true
     },
-    phoneno:{
-        type:Number,
+    email:{
+        type:String,
         // default:false
     },
     company:{
@@ -28,15 +28,16 @@ const articleSchema = new mongoose.Schema({
         type:Boolean,
         default:false
     },
-    createdAt: {
-        type: Date,
-        default : Date.now
+    currentDate:{
+        type:String
     },
     slug:{
         type: String,
         required: true,
         unique: true
     }
+}, {
+    timestamps:true
 })
 
 articleSchema.pre('validate',function(next){

@@ -8,6 +8,12 @@
     <title>Write your Experience</title>
     <link rel="stylesheet" href="/css/article/utils.css">
     <link rel="stylesheet" href="/css/article/style.css">
+    {{!--
+    <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.2/purify.min.js"></script> --}}
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
+
 </head>
 
 <body>
@@ -35,9 +41,81 @@
 
 
         <form action="/articles/{{article.id}}?_method=PUT" method="POST">
-            {{>_form_fields}}
+            {{!-- {{>_form_fields}} --}}
+            <div class="contact-content font1 max-width-1 m-auto">
+                <div class="max-width-1 m-auto mx-1">
+                    <h2>Write Your Interview Experience</h2>
+                    <div class="contact-form">
+                        <div class="form-box">
+                            <input type="text" name="title" placeholder="Enter Title" value={{article.title}}>
+                        </div>
+                        <div class="form-box">
+                            <input type="text" name="name" placeholder="Enter Your Name" value={{article.name}}>
+                        </div>
+                        <div class="form-box">
+                            <input type="text" name="company" placeholder="Mention the Company Name"
+                                value={{article.company}}>
+                        </div>
+                        <div class="form-box">
+                            <input type="email" name="email" placeholder="Enter Your Email" value={{article.email}}>
+                        </div>
+                        <div class="form-box">
+                            <textarea name="description" id="description" >{{article.description}}</textarea>
+
+                        </div>
+
+                        <div class="form-box1">
+                            <button type="submit" class="btn">Submit</button>
+                            <button type="submit" class="btn">Cancel</button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
         </form>
     </div>
+    <script>
+        const submitBtn = document.querySelector("#submit");
+        ClassicEditor
+            .create(document.querySelector('#description'), {
+                toolbar: {
+                    items: [
+                        'undo', 'redo',
+                        '|', 'heading',
+                        '|', 'bold', 'italic', 'strikethrough', 'subscript', 'superscript', 'code',
+                        '|', 'link', 'blockQuote', 'codeBlock',
+                        '|', 'alignment',
+                        '|', 'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent'
+                    ],
+                    shouldNotGroupWhenFull: true
+                }
+
+            })
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+        submitBtn.addEventListener('click', () => {
+
+            const editorContent = editor.getData();
+
+            const sanitizedContent = sanitizeHtml(editorContent, {
+                allowedTags: [],
+                allowedAttributes: {}
+            });
+
+            document.querySelector('#description').value = sanitizedContent;
+        });
+
+
+
+    </script>
+
 </body>
 
 </html>
