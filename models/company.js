@@ -4,18 +4,18 @@ const mongoose = require('mongoose');
 
 
 const companySchema = new mongoose.Schema({
-    title:{
-        type:String,
-        required:true
+    title: {
+        type: String,
+        required: true
     },
-    count:{
-        type:Number,
+    count: {
+        type: Number,
         default: 0
     },
-    confirm:{
-        type:Boolean,
-        default:false
+    confirm: {
+        type: Boolean,
+        default: false
     }
 })
 
-module.exports=mongoose.model('Company',companySchema);
+module.exports = mongoose.model('Company', companySchema);

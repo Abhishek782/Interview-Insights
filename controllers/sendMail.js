@@ -5,15 +5,12 @@ const dotenv = require('dotenv').config();
 
 
 const sendMail = async (req, res) => {
-    
+
     let data = await User.find({}, { email: 1, _id: 0 });
-    // console.log(data);
+
     var admin_emails = data.map(function (obj) {
         return obj.email;
     });
-    //  console.log(admin_emails);
-
-    // let fake_mails = ["abhishekdeokar782@gmail.com","abhishek.deokar@walchandsangli.ac.in"]
 
     let transporter = await nodemailer.createTransport({
         service: 'gmail',

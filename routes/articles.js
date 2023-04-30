@@ -9,7 +9,6 @@ router.get('/new', (req, res) => {
 })
 
 
-
 router.get('/:slug', async (req, res) => {
     const article = await Article.findOne({ slug: req.params.slug })
     if (article == null) {
@@ -23,9 +22,6 @@ router.post('/', async (req, res, next) => {
     req.article = new Article();
     next();
 }, saveArticleAndRedirect('new'))
-
-
-
 
 
 
@@ -52,50 +48,11 @@ function saveArticleAndRedirect(path) {
                     }
                 });
 
-            // if (path != 'edit') {
-            //     Company.findOne({ 'title': req.body.company }, function (err, subDoc) {
-            //         // If there is an error in finding the document, catch them
-            //         if (err) {
-            //             // Handle errors
-            //             console.log(err);
-            //         }
-            //         // If you find a document, increment the `count` and save
-            //         if (subDoc) {
-            //             subDoc.count += 1;
-            //             subDoc.save(function (err2) {
-            //                 if (err2) {
-            //                     // Handle errors
-            //                     console.log(err2);
-            //                 } else {
-            //                     console.log("Success");
-            //                 }
-            //             });
-            //         }
-            //         else {
-            //             // If no document is found, create a new one
-            //             // Populate the values to create the object
-            //             var data = {
-            //                 "title": req.body.company,
-            //                 "count": 1
-            //             };
-            //             Company.create(data, function (err3, subDoc) {
-            //                 if (err3) {
-            //                     // Handle errors
-            //                     console.log(err3);
-            //                 }
-            //                 // Else return success
-            //                 console.log("Success");
-            //             });
-            //         }
-            //     });
-            // }
-
-
-
-
             res.redirect(`/articles/${article.slug}`);
         } catch (e) {
-            res.render(`articles/${path}`, { article: article });
+
+
+            res.render(`articles/${path}`, { article: article, msg: "Please use some other unique title" });
         }
     }
 }

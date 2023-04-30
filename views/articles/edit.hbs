@@ -17,6 +17,11 @@
 </head>
 
 <body>
+    
+    {{#if msg}}
+
+    <script>window.alert(msg)</script>
+    {{/if}}
     <div class="container">
         <div class="upper-container">
             <div class="div-left">
@@ -40,7 +45,7 @@
 
 
 
-        <form action="/articles/{{article.id}}?_method=PUT" method="POST">
+        <form action="/admin/{{article.id}}?_method=PUT" method="POST">
             {{!-- {{>_form_fields}} --}}
             <div class="contact-content font1 max-width-1 m-auto">
                 <div class="max-width-1 m-auto mx-1">

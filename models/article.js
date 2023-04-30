@@ -4,48 +4,47 @@ const slugify = require('slugify');
 const { application } = require('express');
 
 const articleSchema = new mongoose.Schema({
-    title:{
-        type:String,
+    title: {
+        type: String,
         // required:true
     },
-    description:{
-        type:String,
+    description: {
+        type: String,
         // required:true
     },
-    name:{
-        type:String,
+    name: {
+        type: String,
         // required:true
     },
-    email:{
-        type:String,
+    email: {
+        type: String,
         // default:false
     },
-    company:{
-        type:String,
+    company: {
+        type: String,
         // required:true
     },
-    confirm:{
-        type:Boolean,
-        default:false
+    confirm: {
+        type: Boolean,
+        default: false
     },
-    currentDate:{
-        type:String
+    currentDate: {
+        type: String
     },
-    slug:{
+    slug: {
         type: String,
         required: true,
         unique: true
     }
 }, {
-    timestamps:true
+    timestamps: true
 })
 
-articleSchema.pre('validate',function(next){
-    if(this.title)
-    {
-        this.slug = slugify(this.title,{lower:true,strict:true})
+articleSchema.pre('validate', function (next) {
+    if (this.title) {
+        this.slug = slugify(this.title, { lower: true, strict: true })
     }
     next();
 })
 
-module.exports=mongoose.model('Article',articleSchema);
+module.exports = mongoose.model('Article', articleSchema);
