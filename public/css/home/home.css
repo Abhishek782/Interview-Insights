@@ -34,7 +34,7 @@ nav{
     font-weight: 500;
 }
 .completeContainer{
-    /* height: 100vh; */
+    height: 90vh;
     display: flex;
     margin-inline: 3vw;
     /* background-color: #68DBCC; */
@@ -46,20 +46,28 @@ nav{
     flex-direction: column;
     scroll-behavior: smooth;
     overflow-y: auto;
-    min-width: 300px;
-    width: 20%;
+    direction: rtl;
+    width: 300px;
     gap: 10px;
     padding: 10px;
+    min-height: 300px;
 }
 .company{
     display: flex;
-    width: 280px;
+    width: 260px;
     align-items: center;
     justify-content: space-between;
     padding: 8px;
     background-color: white;
     border-radius: 20px;
+    direction: ltr;
     box-shadow: 0px 5px 10px 0px rgba(28, 75, 128, 0.5);
+    color: black;
+}
+.removeUnderline{
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(98, 97, 97);
 }
 .count{
     color: white;
@@ -84,21 +92,32 @@ nav{
     height: 500px;
 }
 .articles{
-    width: 400px;
-    border-radius: 5px;
+    width: 420px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 5px;
+    overflow: auto;
     gap: 10px;
     padding: 10px;
 }
 .article{
-    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    gap: 10px;
     border: 2px solid black;
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
     background-color: white;
     box-shadow: 0px 5px 10px 0px rgba(28, 75, 128, 0.5);
+}
+.description{
+    width: 90%; /* adjust to the desired width of the div */
+    height: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 @media screen and (max-width: 1000px) {
     .lottie{
@@ -117,9 +136,50 @@ nav{
         align-items: center;
         justify-content:center;
     }
+    .companies{
+        height: 30%;
+    }
     nav{
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 }
+/* Define the style for the scrollbar track */
+::-webkit-scrollbar-track {
+    background-color: #f5f5f5; /* Change this to your desired color */
+    border-radius: 4px;
+  }
+  
+  /* Define the style for the scrollbar thumb */
+  ::-webkit-scrollbar-thumb {
+    background-color: #64bcf4; /* Change this to your desired color */
+    border-radius: 4px;
+  }
+  
+  /* Define the style for the scrollbar thumb on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #999; /* Change this to your desired color */
+  }
+  
+  /* Hide the scrollbar when not hovering over it */
+  ::-webkit-scrollbar {
+    width: 4px; /* Change this to your desired width */
+    height: 4px; /* Change this to your desired height */
+    background-color: #64bcf4; /* Change this to your desired color */
+  }
+  
+  /* Hide the scrollbar track when not hovering over it */
+  ::-webkit-scrollbar-track:hover {
+    background-color: #f5f5f5; /* Change this to your desired color */
+  }
+  
+  /* Hide the scrollbar thumb when not hovering over it */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #64bcf4; /* Change this to your desired color */
+  }
+  
+  /* Add a transition effect to the scrollbar thumb */
+  ::-webkit-scrollbar-thumb {
+    transition: background-color 0.2s ease-in-out;
+  }

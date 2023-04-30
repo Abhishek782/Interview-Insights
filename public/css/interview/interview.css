@@ -1,0 +1,104 @@
+*{
+    font-family: 'poppins';
+    box-sizing: border-box;
+}
+body{
+    background-color: #d4edfc;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 10px;
+    padding-inline: 5%;
+    background-color: white;
+}
+.container{
+    margin-top: 20px;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.navButton{
+    display: flex;
+    gap: 20px;
+}
+.webName{
+    text-decoration: none;
+    color: rgb(57, 55, 55);
+}
+.articleButtons{
+    box-shadow: 0px 2px 7px 0px rgba(28, 75, 128, 0.5); 
+    background-color: #64bcf4;
+    padding: 7px 20px;
+    /* border: 1px solid black; */
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+.readMoreButton{
+    box-shadow: 0px 2px 7px 0px rgba(28, 75, 128, 0.5); 
+    background-color: #91cdf2;
+    padding: 7px 20px;
+    /* border: 1px solid black; */
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+.article{
+    width: auto;
+    border-radius: 8px;
+    box-shadow: 0px 2px 7px 0px rgba(28, 75, 128, 0.5); 
+}
+.all-articles{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.description{
+    width: 90%; /* adjust to the desired width of the div */
+    height: 60px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.readMoreAuthorTime{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+p{
+    margin-bottom: 0px;
+}
+@media screen and (max-width: 1200px) {
+    .all-articles{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+@media screen and (max-width: 780px) {
+    nav{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .all-articles{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .article{
+        width: 90%;
+        border-radius: 8px;
+        box-shadow: 0px 2px 7px 0px rgba(28, 75, 128, 0.5); 
+    }
+}

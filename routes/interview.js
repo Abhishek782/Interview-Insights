@@ -5,7 +5,8 @@ const Company = require('../models/company');
 
 router.get('/:company', async (req, res) => {
     const article = await Article.find({ $and: [{ company: req.params.company }, { confirm: true }] });
-    res.render('interview/interview', { articles: article });
+    let company = req.params.company
+    res.render('interview/interview', { articles: article ,company:company});
 })
 
 

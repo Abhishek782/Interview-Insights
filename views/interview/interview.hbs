@@ -9,28 +9,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/interview/interview.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <title>Interview Experience</title>
   </head>
   <body>
+     <nav>
+    <div class="header">
+      <h1><i class="fa-brands fa-aws"></i></h1>
+    <a href="/" class="webName"><h2 style="font-weight:900">Interview Insights</h2></a>
+    </div>
+    <div class="navButton">
+      <a href="/articles/new" class="articleButtons">Write article</a>
+      <a href="/articles/request" class="articleButtons" >Request article</a>
+    </div>
+  </nav>
     <div class="container">
-      <h1 class="mb-4">Interview Articles</h1>
+      <h1 class="mb-4">{{company}}</h1>
 
-      {{#each articles}}
-        <div class="card mt-4">
+      <div class="all-articles">
+        {{#each articles}}
+        <div class="card article">
           <div class="card-body">
             <h4 class="card-title">{{this.title}}</h4>
-            <div class="card-subtitle text-muted mb-2">
-              {{!-- {{this.createdAt.toLocaleDateString('EU'))}}; --}}
-              {{this.currentDate}}
-            </div>
-            <div class="card-text mb-2">
+            <div class="mb-2 description">
               {{{this.description}}}
             </div>
-            <a href="/articles/{{this.slug}}" class="btn btn-primary">Read more</a>
-
+            <div class="readMoreAuthorTime">
+              <a href="/articles/{{this.slug}}" class="readMoreButton">Read more</a>
+              <div class="authorTime">
+                <p>{{this.name}}</p>
+                <P>{{this.currentDate}}</P>
+              </div>
+            </div>
           </div>
         </div>
       {{/each}}
+      </div>
 
     </div>
   </body>
