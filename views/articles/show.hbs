@@ -40,7 +40,9 @@
     </div>
      <div class="show-buttons">
         <a href="/home" class="button">All articles</a>
-        <a href="/admin/edit/{{article.id}}" class="button">Edit</a>
+        {{#if user}}
+          <a href="/admin/edit/{{article.id}}" class="button">Edit</a>
+        {{/if}}
         </div>
     </div>
     {{!-- <div class="container">
