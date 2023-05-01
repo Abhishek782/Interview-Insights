@@ -49,7 +49,7 @@ router.delete('/:id', check.requireAuth, async (req, res) => {
 
 
     await Article.findByIdAndDelete(req.params.id);
-    res.redirect('/');
+    res.redirect('/admin/dashboard');
 })
 
 
