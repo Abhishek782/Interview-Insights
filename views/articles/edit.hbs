@@ -5,79 +5,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Write your Experience</title>
+    <script src="https://kit.fontawesome.com/57d7b546f7.js" crossorigin="anonymous"></script>
+    <title>Interview-Insights</title>
     <link rel="stylesheet" href="/css/article/utils.css">
-    <link rel="stylesheet" href="/css/article/style.css">
-    {{!--
-    <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.2/purify.min.js"></script> --}}
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
 
 </head>
 
 <body>
-    
-    {{#if msg}}
-
-    <script>window.alert(msg)</script>
-    {{/if}}
-    <div class="container">
-        <div class="upper-container">
-            <div class="div-left">
-                <div class="logoAndNav">
-                    <a href="">
-                        <span><img src="/images/article_logo.png" width="50px" alt=""></span>
-                    </a>
-                    <ul>
-                        <li><a href="/home">Home</a></li>
-                        <li><a href="">About</a></li>
-                    </ul>
-                </div>
-                <form action="" method="get">
-                    <input class="form-input" type="text" name="query" placeholder="Search for Companies">
-                    <button class="btn">Search</button>
-                </form>
-            </div>
-        </div>
-
-
-
-
-
+      <nav>
+    <div class="header">
+      <h1><i class="fa-brands fa-aws"></i></h1>
+    <a href="/" class="webName"><h2 style="font-weight:900">Interview Insights</h2></a>
+    </div>
+    <div class="navButton">
+      <a href="/articles/new" class="articleButtons">Write article</a>
+      <a href="/articles/request" class="articleButtons" >Request article</a>
+    </div>
+  </nav>
+    <div class="fill-container">
         <form action="/admin/{{article.id}}?_method=PUT" method="POST">
             {{!-- {{>_form_fields}} --}}
-            <div class="contact-content font1 max-width-1 m-auto">
-                <div class="max-width-1 m-auto mx-1">
-                    <h2>Write Your Interview Experience</h2>
+                <div class="info-box">
+                    <div class="form-headline">
+                        <h2>Edit Interview Experience</h2>
+                    </div>
                     <div class="contact-form">
                         <div class="form-box">
+                            <h4>Title</h4>
                             <input type="text" name="title" placeholder="Enter Title" value={{article.title}}>
                         </div>
-                        <div class="form-box">
-                            <input type="text" name="name" placeholder="Enter Your Name" value={{article.name}}>
-                        </div>
-                        <div class="form-box">
+                        <div class="companyUser">
+                            <div class="form-box">
+                            <h4>Company Name</h4>
                             <input type="text" name="company" placeholder="Mention the Company Name"
                                 value={{article.company}}>
                         </div>
                         <div class="form-box">
-                            <input type="email" name="email" placeholder="Enter Your Email" value={{article.email}}>
+                            <h4>Your Name</h4>
+                            <input type="text" name="name" placeholder="Enter Your Name" value={{article.name}}>
+                        </div>
                         </div>
                         <div class="form-box">
+                            <h4>Email for verification</h4>
+                            <input type="email" name="email" placeholder="Enter Your Email" value={{article.email}}>
+                        </div>
+                        <div class="form-box textareaSizing">
+                            <h4>Share your experience here</h4>
                             <textarea name="description" id="description" >{{article.description}}</textarea>
-
                         </div>
-
                         <div class="form-box1">
-                            <button type="submit" class="btn">Submit</button>
-                            <button type="submit" class="btn">Cancel</button>
-
+                            <button type="submit" class="submit articleButtons">Save Changes</button>
+                            <button type="submit" class="cancel articleButtons">Cancel</button>
                         </div>
-
                     </div>
-                </div>
-
             </div>
         </form>
     </div>

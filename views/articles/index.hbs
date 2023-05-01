@@ -1,40 +1,101 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview Experience</title>
-</head>
-<body>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-4t4o+DYRyJUBhC9jJrT/hKjncr1W8r+BlRbOP2KVJcHXjK3q8Gv3x+6H0jYzJbvt2+g1RVFiv1C10UblJ/jFKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/dashboard/dashboard.css" />
+    <title>Interview-Insights</title>
+  </head>
+  <body>
+    <nav>
+      <div class="header">
+        <h1><i class="fa-brands fa-aws"></i></h1>
+        <a href="/" class="webName"><h2 style="font-weight:900">Interview
+            Insights</h2></a>
+      </div>
+      <div class="navButton">
+        {{#if user}}
+        <a href="/user/logout" class="articleButtons">Log out</a></li>
+        {{/if}}
+        <a href="/articles/new" class="articleButtons">Write article</a>
+      </div>
+    </nav>
     <div class="container">
-        <h1 class="mb-4">Interview Articles</h1>
-        <a href="/articles/new" class="btn btn-success">New article</a>
+      <h1 class="mb-4">Interview Articles</h1>
+      <a href="/articles/new" class="articleButtons">New article</a>
 
+      <div class="checkout-container myContent">
         {{#each articles}}
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h4 class="card-title">{{this.title}}</h4>
-                    <div class="card-subtitle text-muted mb-2">
-                        {{!-- {{this.createdAt.toLocaleDateString('EU'))}}; --}}
-                        {{this.currentDate}}
-                    </div>
-                    <div class="card-text mb-2">
-                        {{this.description}}
-                    </div>
-                    <a href="/articles/{{this.slug}}" class="btn btn-primary">Read more</a>
-                    <a href="/admin/edit/{{this.id}}" class="btn btn-info">Edit</a>
-                    <form action="/uploads/{{this.id}}" method="POST" class="d-inline">
-                        <button type="submit" class="btn btn-danger">Upload</button>
-                    </form>
-                    <form action="/admin/{{this.id}}?_method=DELETE" method="POST" class="d-inline">
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
-                </div>
+          <div class="one-container card mt-4">
+            <div class="card-body">
+              <h4 class="card-title">{{{this.title}}}</h4>
+              <div class="card-subtitle text-muted mb-2">
+                {{!-- {{this.createdAt.toLocaleDateString('EU'))}}; --}}
+                {{{this.currentDate}}}
+              </div>
+              <div class="card-text mb-2 description">
+                {{{this.description}}}
+              </div>
+              <div class="buttons">
+                <a
+                  href="/articles/{{this.slug}}"
+                  class="articleButtons readMore"
+                >Read more</a>
+                <a
+                  href="/articles/edit/{{this.id}}"
+                  class="articleButtons edit"
+                >Edit</a>
+                <form
+                  action="/uploads/{{this.id}}"
+                  method="POST"
+                  class="d-inline"
+                >
+                  <button
+                    type="submit"
+                    class="articleButtons upload"
+                  >Upload</button>
+                </form>
+                <form
+                  action="/articles/{{this.id}}?_method=DELETE"
+                  method="POST"
+                  class="d-inline"
+                >
+                  <button
+                    type="submit"
+                    class="articleButtons delete"
+                  >Delete</button>
+                </form>
+              </div>
             </div>
+          </div>
         {{/each}}
-    
+      </div>
+      <div class="pagination"></div>
+      <script>
+        function renderPage(page) { var articles =
+        document.querySelectorAll('.one-container'); var perPage = 6; var start
+        = (page - 1) * perPage; var end = start + perPage; for (var i = 0; i <
+        articles.length; i++) { if (i >= start && i < end) {
+        articles[i].style.display = 'block'; } else { articles[i].style.display
+        = 'none'; } } } function renderPagination() { var articles =
+        document.querySelectorAll('.one-container'); var perPage = 5; var pages
+        = Math.ceil(articles.length / perPage); var pagination =
+        document.querySelector('.pagination'); for (var i = 1; i <= pages; i++)
+        { var link = document.createElement('a'); link.href = '#';
+        link.innerHTML = i; link.addEventListener('click', function(e) {
+        e.preventDefault(); var page = parseInt(e.target.innerHTML);
+        renderPage(page); }); pagination.appendChild(link); } }
+        renderPage(1);
+        renderPagination();
+      </script>
     </div>
-</body>
+  </body>
 </html>

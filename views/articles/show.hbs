@@ -4,21 +4,55 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/css/show/show.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Interview-Insights</title>
 </head>
 <body>
-    <div class="container">
-        <h1 class="mb-4">{{article.title}}</h1>
-        <div class="text-muted mb-2">
-        <div>{{article.currentDate}}</div>
+      <nav>
+    <div class="header">
+      <h1><i class="fa-brands fa-aws"></i></h1>
+    <a href="/" class="webName"><h2 style="font-weight:900">Interview Insights</h2></a>
+    </div>
+    <div class="navButton">
+      <a href="/articles/new" class="articleButtons">Write article</a>
+      <a href="/request" class="articleButtons" >Request article</a>
+    </div>
+  </nav>
+    <div class="body-container">
+      <div class="show-container">
+      <h1 class="article-title">{{{article.title}}}</h1>
+      <div class="authorDateCompany">
+        <div class="author tags">
+          {{article.name}}
         </div>
-        <a href="/home" class="btn btn-secondary">All articles</a>
-        
-        <a href="/articles/edit/{{article.id}}" class="btn btn-info">Edit</a>
-        <div>
+        <div class="date tags">
+          {{{article.currentDate}}}
+        </div>
+        <div class="company tags">
+          {{{article.company}}}
+        </div>
+      </div>
+      <div class="description">
         {{{article.description}}}
+      </div>
+    </div>
+     <div class="show-buttons">
+        <a href="/home" class="button">All articles</a>
+        <a href="/admin/edit/{{article.id}}" class="button">Edit</a>
         </div>
     </div>
+    {{!-- <div class="container">
+        <h1 class="mb-4">{{article.title}}</h1>
+        <div class="text-muted mb-2">
+        <div>{{article.createdAt}}</div>
+        </div>
+        <a href="/home" class="btn btn-secondary">All articles</a>
+        <a href="/articles/edit/{{article.id}}" class="btn btn-info">Edit</a>
+        <div>
+        {{article.markdown}}
+        </div>
+    </div> --}}
 </body>
 </html>

@@ -27,11 +27,11 @@ router.post('/', async (req, res) => {
     });
 
     let info = await transporter.sendMail({
-        from: '"Abhishek Deokar" <wceit101@gmail.com>', // sender address
+        from: '"Abhishek Deokar" <techtitans1520@gmail.com>', // sender address
         to: admin_emails, // list of receivers
         subject: "Hello Admin,  new article request ", // Subject line
         text: "Request for article", // plain text body
-        html: `<b>Hello admin, there is a pending request for article on your interview website</b><br><p>Request for article by ${req.body.fullName}  { ${req.body.email}   } for company ${req.body.company}  company candidate - ${req.body.senior}    ${req.body.seniorLink}</p> `, // html body
+        html: `<b>Hello admin, there is a pending request for article on your interview website</b><br><p>Request for article by ${req.body.name}  { ${req.body.email}   } for company ${req.body.company}  company candidate - ${req.body.senior}    ${req.body.link}</p> `, // html body
     });
     
     res.redirect('/');

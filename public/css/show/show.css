@@ -1,0 +1,118 @@
+*{
+    font-family: 'poppins';
+}
+body{
+    background-color: #d4edfc;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 10px;
+    padding-inline: 5%;
+    background-color: white;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.navButton{
+    display: flex;
+    gap: 20px;
+}
+.webName{
+    text-decoration: none;
+    color: rgb(57, 55, 55);
+}
+.articleButtons{
+    box-shadow: 0px 2px 7px 0px rgba(28, 75, 128, 0.5); 
+    background-color: #64bcf4;
+    padding: 7px 20px;
+    /* border: 1px solid black; */
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+
+.body-container{
+    background-color: #d4edfc;
+    width: 100vw;
+    height: auto;
+    padding-block: 20px;
+    padding-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.show-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 70%;
+    margin-inline: auto;
+    border-radius: 3px;
+    background-color: white;
+    padding: 20px;
+}
+.article-title{
+    font-weight: 600;
+    color: rgb(93, 92, 92);
+}
+.authorDateCompany{
+    display: flex;
+    gap: 20px;
+}
+.tags{
+    background-color: #add9f3;
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 4px 0px rgba(28, 75, 128, 0.5); 
+}
+.show-buttons{
+    display: flex;
+    gap: 20px;
+    width: 70%;
+    margin-inline: auto;
+    justify-content: end;
+}
+.button{
+    box-shadow: 0px 2px 7px 0px rgba(28, 75, 128, 0.5); 
+    background-color: #64bcf4;
+    padding: 7px 20px;
+    /* border: 1px solid black; */
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+@media screen and (max-width: 750px) {
+
+    .show-container{
+        width: 90%;
+    }
+    nav{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .authorDateCompany{
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+    }
+    .tags{
+        display: inline;
+    }
+    .show-buttons{
+        display: flex;
+        gap: 20px;
+        width: 90%;
+        margin-inline: auto;
+        justify-content: end;
+    }
+}

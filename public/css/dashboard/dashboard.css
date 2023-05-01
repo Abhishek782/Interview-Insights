@@ -1,0 +1,107 @@
+*{
+    font-family: 'poppins';
+    box-sizing: border-box;
+}
+body{
+    background-color: #d4edfc;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 10px;
+    padding-inline: 5%;
+    background-color: white;
+}
+.container{
+    margin-top: 20px;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.navButton{
+    display: flex;
+    gap: 20px;
+}
+.webName{
+    text-decoration: none;
+    color: rgb(57, 55, 55);
+}
+.articleButtons{
+    box-shadow: 0px 2px 7px 0px rgba(28, 75, 128, 0.5); 
+    background-color: #64bcf4;
+    padding: 7px 20px;
+    /* border: 1px solid black; */
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+.checkout-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+}
+.one-container:hover{
+    transform: scale(1.050);
+}
+.description{
+    width: 90%; /* adjust to the desired width of the div */
+    height: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.one-container{
+    border-radius: 10px;
+    box-shadow: 0px 2px 7px 0px rgba(28, 75, 128, 0.5); 
+}
+
+.upload{
+    background-color: #64bcf4;
+    border: none;
+    text-align: center;
+    width: 100%;
+}
+.edit{
+    background-color: #64bcf4;
+    text-align: center;
+}
+.delete{
+    background-color: #64bcf4;
+    border: none;
+    text-align: center;
+    width: 100%;
+}
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+    text-align: center;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-block: 30px;
+  }
+  
+  .pagination a {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+  }
+  
+  .pagination a:hover {
+    background-color: #eee;
+  }

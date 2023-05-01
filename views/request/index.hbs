@@ -5,60 +5,66 @@
     <title>Interview-Insights</title>
     <meta name="viewport" content="width=device-width,
       initial-scale=1.0"/>
-    <link rel="stylesheet" href="/css/request/style.css" />
+    <link rel="stylesheet" href="/css/request/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="container">
-      <h1 class="form-title">Request an Article</h1>
-      <form action = "/request" method="POST">
-        <div class="main-user-info">
-          <div class="user-input-box">
-            <label for="fullName">Your Name</label>
-            <input type="text"
-                    id="fullName"
-                    name="fullName"
-                    placeholder="Enter Full Name"/>
-          </div>
-          <div class="user-input-box">
-            <label for="email">Email</label>
-            <input type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter Email"/>
-          </div>
-          <div class="user-input-box">
-            <label for="senior">Senior Name</label>
-            <input type="text"
-                    id="senior"
-                    name="senior"
-                    placeholder="Enter Senior Name"/>
-          </div>
-          <div class="user-input-box">
-            <label for="senior">Senior Social Link</label>
-            <input type="text"
-                    id="senior"
-                    name="seniorLink"
-                    placeholder="Enter Senior's social profile link"/>
-          </div>
-          <div class="user-input-box">
-            <label for="company">Company Name</label>
-            <input type="text"
-                    id="company"
-                    name="company"
-                    placeholder="Enter Company Name"/>
-          </div>
-          <div class="user-input-box">
-            <label for="personalnote">Personal Note</label>
-            <input type="text"
-                    id="personalnote"
-                    name="personalnote"
-                    placeholder="Enter the points to be covered"/>
-          </div>
-        </div>
-        <div class="form-submit-btn">
-          <button type="submit">Done</button>
-        </div>
-      </form>
+      <nav>
+    <div class="header">
+      <h1><i class="fa-brands fa-aws"></i></h1>
+    <a href="/" class="webName"><h2 style="font-weight:900">Interview Insights</h2></a>
+    </div>
+    <div class="navButton">
+      <a href="/articles/new" class="articleButtons">Write article</a>
+      <a href="/request" class="articleButtons" >Request article</a>
+    </div>
+  </nav>
+    
+    <div class="fill-container">
+        <form action="/request" method="POST">
+                <div class="info-box">
+                    <div class="form-headline">
+                        <h2>Request an Article</h2>
+                    </div>
+                    <div class="contact-form">
+
+                        <div class="companyUser">
+                            <div class="form-box">
+                            <h4>Your Name</h4>
+                            <input type="text" name="name" placeholder="Enter your name">
+                        </div>
+                        <div class="form-box">
+                            <h4>Email</h4>
+                            <input type="email" name="email" placeholder="Enter email" >
+                        </div>
+                        </div>
+                        <div class="companyUser">
+                            <div class="form-box">
+                            <h4>Senior Name</h4>
+                            <input type="text" name="senior" placeholder="Enter senior name">
+                        </div>
+                        <div class="form-box">
+                            <h4>Senior Social Link</h4>
+                            <input type="text" name="link" placeholder="Enter senior's social link" value={{article.name}}>
+                        </div>
+                        </div>
+                        <div class="companyUser">
+                            <div class="form-box">
+                            <h4>Company Name</h4>
+                            <input type="text" name="company" placeholder="Enter Company Name">
+                        </div>
+                        <div class="form-box">
+                            <h4>Personal Note</h4>
+                            <input type="text" name="note" placeholder="Enter personal note" >
+                        </div>
+                        </div>
+
+                        <div class="form-box1">
+                            <button type="submit" class="submit articleButtons">Done</button>
+                        </div>
+                    </div>
+            </div>
+        </form>
     </div>
   </body>
 </html>
