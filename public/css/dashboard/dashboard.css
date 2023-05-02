@@ -13,8 +13,11 @@ nav{
     padding-inline: 5%;
     background-color: white;
 }
+.title{
+    height: 70px;
+}
 .container{
-    margin-top: 20px;
+    margin-top: 40px;
 }
 .header{
     display: flex;
@@ -47,7 +50,7 @@ nav{
     gap: 10px;
 }
 .one-container:hover{
-    transform: scale(1.050);
+    transform: scale(1.020);
 }
 .description{
     width: 90%; /* adjust to the desired width of the div */

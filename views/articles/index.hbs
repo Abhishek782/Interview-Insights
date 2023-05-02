@@ -36,7 +36,9 @@
         {{#each articles}}
           <div class="one-container card mt-4">
             <div class="card-body">
-              <h4 class="card-title">{{{this.title}}}</h4>
+              <div class="title">
+                <h4 class="card-title">{{{this.title}}}</h4>
+              </div>
               <div class="card-subtitle text-muted mb-2">
                 {{!-- {{this.createdAt.toLocaleDateString('EU'))}}; --}}
                 {{{this.currentDate}}}
