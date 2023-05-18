@@ -3,7 +3,7 @@ const { findById } = require('../models/article');
 const router = express.Router();
 const Article = require('../models/article')
 const Company = require('../models/company');
-
+const nodemailer = require('nodemailer')
 
 router.post('/:id', async (req, res) => {
 
@@ -52,6 +52,26 @@ router.post('/:id', async (req, res) => {
     }
 
   }
+
+  let receiver = article.email;
+  
+  let transporter = await nodemailer.createTransport({
+    service: 'gmail',
+    host: "smtp.gmail.com",
+    auth: {
+        user: process.env.EMAIL,
+        pass: process.env.EMAIL_PASSWORD
+    }
+});
+
+let info = await transporter.sendMail({
+    from: '"Abhishek Deokar" <techtitans1520@gmail.com>', // sender address
+    to: receiver, // list of receivers
+    subject: "Hello user,  there is update regarding approval of your article ", // Subject line
+    text: "Article status", // plain text body
+    html: `<b>Hello  ${article.name} !!, your article on ${article.title}  has been approved and published on website, Thank you for contributing !!`, // html body
+});
+
 
   res.redirect('/home');
 })

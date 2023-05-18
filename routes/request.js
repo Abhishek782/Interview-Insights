@@ -4,6 +4,7 @@ const sendMail = require('../controllers/sendMail');
 const dotenv = require('dotenv').config();
 const User = require("../models/user");
 const nodemailer = require('nodemailer')
+const Request  = require('../models/request')
 
 router.get('/', (req, res) => {
 
@@ -12,6 +13,10 @@ router.get('/', (req, res) => {
 
 
 router.post('/', async (req, res) => {
+
+    console.log(req.body);
+    let request = await Request.create({ name : req.body.name, email :req.body.email, company:req.body.company,senior:req.body.senior,link:req.body.link, note:req.body.note });
+    //console.log(request);
     let data = await User.find({}, { email: 1, _id: 0 });
     var admin_emails = data.map(function (obj) {
         return obj.email;
