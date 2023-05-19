@@ -9,6 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
+    {{#if msg}}
+    <script>
+        window.alert('{{msg}}')
+    </script>
+
+    {{/if}}
       <nav>
     <div class="header">
       <h1><i class="fa-brands fa-aws"></i></h1>
