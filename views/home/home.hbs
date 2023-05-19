@@ -1,72 +1,110 @@
 <html lang="en">
 
-<head>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/css/home/home.css">
-  <script src="https://kit.fontawesome.com/57d7b546f7.js" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-  <title>Interview-Insights</title>
-</head>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/home/home.css" />
+    <script
+      src="https://kit.fontawesome.com/57d7b546f7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Interview-Insights</title>
+  </head>
 
-<body>
-  <nav>
-    <div class="header">
-      <h1><i class="fa-brands fa-aws"></i></h1>
-    <a href="/" class="webName"><h2 style="font-weight:900">Interview Insights</h2></a>
-    </div>
-    <div class="navButton">
-      {{#if user}}
-        <a href="/admin/dashboard" class="articleButtons">Admin Dashboard</a>
-      {{/if}}
-      <a href="/articles/new" class="articleButtons">Write article</a>
-      <a href="/request" class="articleButtons" >Request article</a>
-    </div>
-  </nav>
-  <div class="completeContainer">
+  <body>
+    <nav>
+      <div class="header">
+        <h1><i class="fa-brands fa-aws"></i></h1>
+        <a href="/" class="webName"><h2 style="font-weight:900">Interview
+            Insights</h2></a>
+      </div>
+      <div class="navButton">
+        {{#if user}}
+          <a href="/admin/dashboard" class="articleButtons">Admin Dashboard</a>
+        {{/if}}
+        <a href="/articles/new" class="articleButtons">Write article</a>
+        <a href="/request" class="articleButtons">Request article</a>
+      </div>
+    </nav>
+    <div class="completeContainer">
 
-    
-    <div class="companies">
-      <h4>Company List</h4>
-      {{#each company}}
-      <a class="removeUnderline" href="/interview/{{this.title}}">
-      <div class="company">
-        <h4 class="card-title removeUnderline">{{this.title}}</h4>
-        <div class="count">
-          {{this.count}}
+      <div class="companies">
+        <h4>Company List</h4>
+        {{#each company}}
+          <a class="removeUnderline" href="/interview/{{this.title}}">
+            <div class="company">
+              <h4 class="card-title removeUnderline">{{this.title}}</h4>
+              <div class="count">
+                {{this.count}}
+              </div>
+            </div>
+          </a>
+        {{/each}}
+      </div>
+      <div class="lottie">
+        <iframe
+          class="lottieImage"
+          src="https://embed.lottiefiles.com/animation/76035"
+        ></iframe>
+        <p>Interview Insights: Experience Sharing platform developed for WCE to
+          read & share encounters of various interviews</p>
+        <h4>Requested Articles</h4>
+        <div class="requested-article">
+          <ul class="toggle-bars">
+            {{#each requests}}
+            <li>
+              <div class="toggle-click">
+                <h4><i class="fa-solid fa-caret-down"></i> {{this.company}}</h4>
+                <p><i>~{{this.name}}</i></p>
+              </div>
+              <div class="content">
+                <p>{{this.note}}.</p>
+              </div>
+            </li>
+            {{/each}}
+          </ul>
+
         </div>
       </div>
-        </a>
-      {{/each}}
-    </div>
-    <div class="lottie">
-      <iframe class="lottieImage" src="https://embed.lottiefiles.com/animation/76035"></iframe>
-      <p>Interview Insights: Experience Sharing platform developed for WCE to read & share encounters of various
-        interviews</p>
-    </div>
-    <div class="articles">
-      <h4>All Articles</h4>
-      {{#each articles}}
-      <div class="article">
-        <div class="card-body">
-          <h4 class="card-title removeUnderline">{{this.title}}</h4>
-          <div class="card-subtitle text-muted mb-2">
-            {{this.currentDate}}
+      <div class="articles">
+        <h4>All Articles</h4>
+        {{#each articles}}
+          <div class="article">
+            <div class="card-body">
+              <h4 class="card-title removeUnderline">{{this.title}}</h4>
+              <div class="card-subtitle text-muted mb-2">
+                {{this.currentDate}}
+              </div>
+              <div class="card-text mb-2 description">
+                {{{this.description}}}
+              </div>
+              <a href="/articles/{{this.slug}}" class="articleButtons">Read more</a>
+            </div>
           </div>
-          <div class="card-text mb-2 description">
-            {{{this.description}}}
-          </div>
-          <a href="/articles/{{this.slug}}" class="articleButtons">Read more</a>
-        </div>
+        {{/each}}
       </div>
-      {{/each}}
     </div>
-  </div>
-</body>
+    <script>
+      const toggleBars = document.querySelectorAll('.toggle-bars li'); // Attach
+      event listeners to toggle bars toggleBars.forEach((toggleBar) => { const
+      title = toggleBar.querySelector('.toggle-click'); const content =
+      toggleBar.querySelector('.content'); title.addEventListener('click', () =>
+      { content.style.display = content.style.display === 'none' ? 'block' :
+      'none'; }); });
+    </script>
+  </body>
 
 </html>
