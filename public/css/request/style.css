@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'poppins';
 }
 nav{
   display: flex;
@@ -17,6 +17,9 @@ nav{
   align-items: center;
   justify-content: center;
   gap: 20px;
+}
+.logo img{
+  width: 40px;
 }
 .navButton{
   display: flex;

@@ -18,6 +18,9 @@ nav{
   padding-inline: 5%;
   background-color: white;
 }
+.logo img {
+  width: 40px;
+}
 .header{
   display: flex;
   align-items: center;

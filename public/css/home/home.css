@@ -14,6 +14,9 @@ nav{
     justify-content: center;
     gap: 20px;
 }
+.logo img {
+    width: 40px;
+}
 .navButton{
     display: flex;
     gap: 20px;

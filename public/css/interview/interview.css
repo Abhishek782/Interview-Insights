@@ -16,6 +16,9 @@ nav{
 .container{
     margin-top: 20px;
 }
+.logo img {
+    width: 40px;
+}
 .header{
     display: flex;
     align-items: center;
