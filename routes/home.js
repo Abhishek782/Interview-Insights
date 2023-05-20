@@ -9,6 +9,10 @@ router.get('/', async (req, res) => {
     const company = await Company.find({ confirm: true }).sort({ title: 1 }).collation({ locale: "en", caseLevel: true });
     const requests = await Request.find({});
 
+
+    
+
+    
     res.render('home/home', { articles: article, company: company, requests : requests });
 })
 
