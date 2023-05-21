@@ -4,11 +4,13 @@
   "description": "This is interview experience website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "author": "Abhishek Deokar",
   "license": "ISC",
   "dependencies": {
+    "@coffeeandfun/google-profanity-words": "^1.0.4",
     "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
     "cheerio": "^1.0.0-rc.12",
