@@ -19,7 +19,11 @@ from the articles.
 Technology Stack Used :
 
 Frontend : HTML, CSS, Javascript , Handlebars
+
 Backend: NodeJS
+
 Database : MongoDB
+
 Web Scraping – Cheerio NodeJS library
+
 Automation & Testing – Profanity pre-trained model
