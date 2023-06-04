@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.developers {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.developer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #dceffb;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: calc(25% - 20px);
+  max-width: 300px; 
+  height: 300px;
+  border: 0.5px solid #64bcf4;
+}
+
+.developer:hover {
+  transform: translateY(-5px);
+}
+
+img {
+  width: 180px;
+  height: 180px;
+  border-radius: 40%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 1px solid #64bcf4;
+}
+
+.info {
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-links a {
+  color: #333;
+  font-size: 25px;
+}
+.fa-instagram:hover{
+  color:#E4405F;
+}
+.fa-linkedin:hover{
+  color: #4267B2;
+}
+.fa-envelope:hover{
+  color: #D44638;
+}
+@media screen and (max-width: 960px) {
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .developer {
+    width: calc(33.33% - 20px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .developer {
+    width: calc(50% - 20px);
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .developer {
+    width: 100%;
+    max-width: none; 
+    height: auto;
+  }
+}
+

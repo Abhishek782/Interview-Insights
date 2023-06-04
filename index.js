@@ -12,6 +12,7 @@ const userRouter = require('./routes/user');
 const homeRouter = require('./routes/home');
 const interviewRouter = require('./routes/interview');
 const adminRouter = require('./routes/admin');
+const developerRouter = require('./routes/developers')
 const cookieParser = require('cookie-parser');
 const path = require('path');
 
@@ -41,6 +42,8 @@ app.use('/uploads', uploadRouter);
 app.use('/home', homeRouter);
 app.use('/interview', interviewRouter);
 app.use('/admin', adminRouter);
+app.use('/developers', developerRouter);
+
 
 
 app.get('/', async (req, res) => {

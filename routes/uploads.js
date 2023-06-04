@@ -66,7 +66,7 @@ router.post('/:id', async (req, res) => {
   });
 
   let info = await transporter.sendMail({
-    from: '"Abhishek Deokar" <techtitans1520@gmail.com>', // sender address
+    from: '"Interview-Insights" <techtitans1520@gmail.com>', // sender address
     to: receiver, // list of receivers
     subject: "Hello user,  there is update regarding approval of your article ", // Subject line
     text: "Article status", // plain text body

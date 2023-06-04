@@ -373,8 +373,11 @@ header .container {
     max-width: 700px;
     margin: 0 auto;
   }
-
+  
   .showcase-area .container {
+    grid-template-areas: 
+    'svg svg'
+    'text text';
     grid-template-columns: 1fr;
     justify-content: center;
     grid-gap: 2rem;
@@ -394,14 +397,20 @@ header .container {
     height: 100%;
     transform: none;
   } */
+
+  .left{
+    grid-area: text;
+  }
   .right{
-    width: 1000px;
-    height: 800px;
-    background-color: #45424b;
+    position: relative;
+    grid-area: svg;
+    width: 80%;
   }
   .right .lottie{
-    width: 100%;
-    height: 199%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
   }
 
   .logo h3 {
@@ -413,6 +422,7 @@ header .container {
     left: -150px;
   }
 }
+
 
 @media screen and (max-width: 470px) {
   .container {
@@ -430,4 +440,5 @@ header .container {
   .showcase-area .btn {
     font-size: 0.8rem;
   }
+
 }
