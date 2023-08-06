@@ -30,3 +30,10 @@ Database : MongoDB
 Web Scraping – Cheerio NodeJS library
 
 Automation & Testing – Profanity pre-trained model
+
+
+Developers : 
+1) Abhishek Deokar
+2) Mohit Khairnar
+3) Ayush Wadalkar
+4) Sarthak Deshmukh
