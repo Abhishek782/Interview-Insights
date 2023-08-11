@@ -38,3 +38,5 @@ Developers :
 3) Ayush Wadalkar
 4) Sarthak Deshmukh
 5) Adwait Samak
+6) Anand Kadale
+7) Mayuresh Shedmekhe
