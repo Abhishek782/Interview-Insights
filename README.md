@@ -19,7 +19,7 @@ that anyone from any academic year can take reference
 from the articles.
 
 
-Technology Stack Used :
+Tools and Technology Stack Used :
 
 Frontend : HTML, CSS, Javascript , Handlebars
 
